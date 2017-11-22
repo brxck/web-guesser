@@ -1,0 +1,13 @@
+%html
+  %head
+    %title Caesar Reloaded
+  %body
+    %form
+      %div
+        %text Message:
+        %input{:type => "text", :name => "message"}
+      %div
+        Shift:
+        %input{:type => "number", :name => "shift", :value => "0"}
+        %input{:type => "submit", :value => "Encode"}
+    %p= encoded
