@@ -38,5 +38,8 @@ guesser = Guesser.new
 get "/" do
   guess = params["guess"].to_i
   message, color = guesser.make_guess(guess)
+  if params["cheat"] == "true"
+    message += " (The secret number is #{guesser.number})"
+  end
   erb :index, :locals => { :message => message, :color => color }
 end
